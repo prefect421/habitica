@@ -7,13 +7,13 @@ services:
     depends_on:
       - server
     environment:
-      - BASE_URL=http://server:3000
+      - BASE_URL=http://server:16300
     networks:
       - habitica
     ports:
-      - "8080:8080"
+      - "16080:8080"
     volumes:
-      - .:/usr/src/habitica
+      - /home/mike/Docker_Config/habitica:/usr/src/habitica
       - /usr/src/habitica/node_modules
       - /usr/src/habitica/website/client/node_modules
   server:
@@ -28,7 +28,7 @@ services:
     networks:
       - habitica
     ports:
-      - "3000:3000"
+      - "16300:3000"
     volumes:
       - .:/usr/src/habitica
       - /usr/src/habitica/node_modules
